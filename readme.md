@@ -18,19 +18,18 @@ Polling is a useful technique for handling asynchronous tasks where the client n
 Long polling is basically no different as short polling, the only difference is that, you cannot get a status update of long running task unlike short polling where you get job status update. In long polling , the server will only deliver a response when the task or job assigned is completed.Long polling is more scalable than short polling as it is less chatty and its is used by *kafka*.
 
 
-**Limitation of request/response architecure or design pattern:**
+**Limitation of request/response architecure or design pattern:**  
 1.it is not ideal for notification on the backend
-2.
 
-**SSE(SERVER SENT EVENT):**
-1.A response that has a start but no end
-2.server sends logical events as part of response 
-3.server never writes the end of the response
-4.works with http.
-**pros**
-5.it real time and compatotble with htttp
-**cons**
-6.client must be online
-7.clients might not be able to handle
-8.polling is preferred for light clients
-9.HTTP/1.1 problem(6 connecttions)
+**SSE(SERVER SENT EVENT):**  
+1.A response that has a start but no end  
+2.server sends logical events as part of response   
+3.server never writes the end of the response  
+4.works with http.  
+**pros**  
+5.it real time and compatotble with htttp  
+**cons**  
+6.client must be online  
+7.clients might not be able to handle  
+8.polling is preferred for light clients  
+9.HTTP/1.1 problem(6 connecttions)  
