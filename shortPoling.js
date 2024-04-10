@@ -9,18 +9,18 @@ app.listen(3000, () => {
 
 app.get('/submit', (req, res) => {
     //create job
-    const jobId =  createJob();
+    const jobId = createJob();
     //update job
     updateJob(jobId);
     res.send(`job created with jobId ${jobId}`)
 })
 
-app.get('/status/:jobId',(req,res)=>{
- const jobId =  req.params.jobId;
- if(job[jobId]===100){
-   return res.send(`job completed >>>>>${job[jobId]}% (domi response data)`)
- }
- res.send(`job status: ${job[jobId]}%`);
+app.get('/status/:jobId', (req, res) => {
+    const jobId = req.params.jobId;
+    if (job[jobId] === 100) {
+        return res.send(`job completed >>>>>${job[jobId]}% (domi response data)`)
+    }
+    res.send(`job status: ${job[jobId]}%`);
 })
 
 function createJob() {
@@ -32,8 +32,8 @@ function createJob() {
 function updateJob(jobId) {
     job[jobId] += 10;
     setTimeout(() => {
-        if (job[jobId] === 100)return;
+        if (job[jobId] === 100) return;
         updateJob(jobId);
-    },1000);
+    }, 1000);
 }
 
